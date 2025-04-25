@@ -3,7 +3,7 @@
 typedef struct attivita_studio *item;
 #endif
 
-#include "adt.h"
+#include "adt_pqueue.h"
 
 #define NULLITEM 0
 
@@ -27,7 +27,7 @@ EFFETTI COLLATERALI:
 - La lista in input sarà modificata con l'aggiunta di una nuova attività di studio.
 
 */
-int aggiungi (lista l);
+int aggiungi (void);
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ POSTCONDIZIONI:
 - La funzione prende in input un la lista "l", l'identificativo "id" e la durata di un'attività "tempo", trova l'attività in base alla posizione
     nella lista e compara "tempo" con "tempo_stimato", stampando la percentuale di completamento dell'attività "stato".
 */
-int stato_completamento (lista l, int id, float tempo);
+int stato_completamento (pqueue q, int id, float tempo);
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,4 +66,4 @@ POSTCONDIZIONI:
 - La funzione prende in input un la lista "l" e crea un file chiamato "report_seettimana.txt", nel quale scrive descrizione, nome corso e stato completamento.
 
 */
-void genera_report(lista l);
+void genera_report(pqueue q);

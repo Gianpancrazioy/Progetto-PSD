@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>   //Inclusione libreria <time.h> per ottenere data ed ora correnti.
 
 #include "item.h"
 
@@ -15,15 +16,20 @@ struct attivita_studio{
 
 //-------------------------------------------------------------------------------------
 
-int aggiungi (lista l){
+int aggiungi (void){
+    time_t rawtime;
+    struct tm* timeinfo;
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
 
+    item new;
 
-
+    
 }
 
 //-------------------------------------------------------------------------------------
 
-int stato_completamento (lista l, int id, float tempo){
+int stato_completamento (pqueue q, int id, float tempo){
 
 
     
