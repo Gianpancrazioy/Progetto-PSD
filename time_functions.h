@@ -1,0 +1,1 @@
+void ottieni_data_oggi(int* ora, int* minuto, int* giorno, int* mese, int* anno, char* giorno_settimana);

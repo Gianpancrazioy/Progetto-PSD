@@ -75,7 +75,7 @@ return q->vet[1];                            // Resituisce l'elemento al primo i
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 // Funzione per eliminare l'elemento massimo dalla coda di priorità.
-item deleteMax(pqueue q){
+int deleteMax(pqueue q){
      
      if (!q || q->numel == 0){          // Controlla se la coda è vuota o il puntatore è NULL.
           printf("Errore, coda vuota o inesistente.\n");
