@@ -1,9 +1,6 @@
 calendario.exe: main.o adt_pqueue.o time_functions.o item.o functions.o
 	gcc  main.o adt_pqueue.o time_functions.o item.o functions.o -o calendario.exe
 
-calendarioprova.exe: main.o time_functions.o
-	gcc main.o time_functions.o -o calendarioprova.exe
-
 main.o: main.c 
 	gcc -c main.c
 
