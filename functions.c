@@ -1,6 +1,8 @@
 #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
+    #include <windows.h>
     #define CLEAR "cls"
 #else                       //Pulizia schermo in caso di dispositivi macOS o Linux
+    #include <unistd.h>
     #define CLEAR "clear"
 #endif
 
@@ -14,6 +16,18 @@
 #include "functions.h"
 #include "time_functions.h"
 #include "adt_pqueue.h"
+
+//------------------------------------------------------------------------------------------------------------
+
+void pausa(int sec){
+    #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
+        Sleep(sec * 1000);
+    #else                       //Pulizia schermo in caso di dispositivi macOS o Linux
+        sleep(sec);
+    #endif
+
+return;
+}
 
 //------------------------------------------------------------------------------------------------------------
 

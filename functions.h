@@ -1,3 +1,5 @@
+void pausa(int sec);
+
 //FUNZIONE PER PULIRE IL BUFFER
 /*
 SPECIFICA SINTATTICA:

@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 #include <string.h>
-#include <unistd.h>
 
 #include "functions.h"
 #include "item.h"
@@ -74,7 +72,7 @@ int main(void){
                 id = ottieni_id(q);
                 if(id == -1){
                     printf("Impossibile aggiungere elemento, problema con ID, riprovare\n");
-                    sleep(3);
+                    pausa(3);
                     break;
                 }
                 item a = aggiungi(id);
@@ -93,7 +91,7 @@ int main(void){
         //CASE 2 PERMETTE DI STAMPARE LA QUEUE REPORT SETTIMANALE
         case 2: pulisci_schermo();
                 stampa_queue_priorita(p); 
-                sleep(7);
+                pausa(7);
                 break;
 
         //CASE 3 PERMETTE DI LAVORARE AD UN'ATTIVITA' E MODIFICARNE IL TEMPO DI LAVORO
@@ -102,7 +100,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
-                        sleep(2);
+                        pausa(2);
                         break;
                     }
 
@@ -135,14 +133,14 @@ int main(void){
                 char stringa[9];
                 double tempo_totale = 0;
                 cronometro(stringa, &tempo_totale);
-                sleep(2);
+                pausa(2);
 
                 printf("Tempo di lavoro: %s\n", stringa);   //Stampa tempo di lavoro su attività scelta
 
                 //Chiama funzione per modificare il tempo di lavoro per l'attività selezionata
                 if(modifica_tempo_queue(q, c, tempo_totale) == 1){
                     printf("Errore, impossibile aggiornare tempo, uscita..\n");
-                    sleep(3);
+                    pausa(3);
                     break;
                 }
 
@@ -151,7 +149,7 @@ int main(void){
         //CASE 4 PERMETTE DI STAMPARE TUTTE LE ATTIVITA' IN ORDINE DI PRIORITA' 
         case 4: pulisci_schermo();
                 stampa_queue_priorita(q);
-                sleep(7);
+                pausa(7);
                 break;
         
         //CASE 5 PERMETTE DI CONTROLLARE STATO COMPLETAMENTO DI UNA DATA ATTIVITA'
@@ -160,7 +158,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
-                        sleep(2);
+                        pausa(2);
                         break;
                     }
 
@@ -205,7 +203,7 @@ int main(void){
                     aggiorna_ritardo(p, a);             //Lo segna anche nel report
                     aggiorna_file_attivita_queue(q);    //Aggiorna il file attività e menu attività
                     }
-                else sleep(3);
+                else pausa(3);
                 
                 break;
         
@@ -214,7 +212,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
-                        sleep(2);
+                        pausa(2);
                         break;
                     }
 
@@ -249,7 +247,7 @@ int main(void){
                 aggiorna_file_attivita_queue(q);
 
                 printf("Attivita' Completata con Successo! Continua Cosi'!\n");
-                sleep(2);
+                pausa(2);
 
                 break;
         
@@ -259,7 +257,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
-                        sleep(2);
+                        pausa(2);
                         break;
                     }
 

@@ -1,3 +1,9 @@
+#ifdef _WIN32
+    #include <windows.h>
+#else
+    #include <unistd.h>
+#endif
+
 #ifdef _WIN32               //Se si è su sistemi Windows:
     #include <conio.h>      //In caso include conio.h, header per funzioni di gestione dell'input / output da console
     #define CLEAR "cls"     //Definisce anche la macro CLEAR = alla stringa letterale "cls" per pulire lo schermo
@@ -100,11 +106,21 @@
 #include <stdio.h>      //Libreria per funzioni standard di input / output
 #include <stdlib.h>     //Libreria per funzioni di manipolazione della memoria
 #include <string.h>     //Libreria per manipolazioen delle stringhe
-#include <unistd.h>     //Libreria per implementare funzione di pausa
 
 #include "time_functions.h"
 
 //------------------------------------------------------------------------------------------------------------------------------------------
+
+static void pausa_tempo(int sec){
+    #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
+        Sleep(sec * 1000);
+    #else                       //Pulizia schermo in caso di dispositivi macOS o Linux
+        sleep(sec);
+    #endif
+
+return;
+}
+
 
 //FUNZIONE PER OTTENERE LA DATA ODIERNA
 /*
@@ -316,7 +332,7 @@ char* cronometro(char* stringa, double* tempo_totale){
     int h = 0, m = 0, s = 0;
 
     while(1){
-        sleep(1);               //Aspetta un secondo prima di eseguire la prossima istruzione
+        pausa_tempo(1);               //Aspetta un secondo prima di eseguire la prossima istruzione
         system(CLEAR);          //Pulisce il terminale
 
         s+=1;                   //Incrementa il numero dei secondi di 1

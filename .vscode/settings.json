@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "time_functions.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "testing_adt.h": "c",
+        "unistd.h": "c",
+        "functions.h": "c",
+        "windows.h": "c",
+        "conio.h": "c"
     }
 }
