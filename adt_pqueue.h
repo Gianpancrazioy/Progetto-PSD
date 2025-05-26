@@ -122,7 +122,7 @@ SPECIFICA SINTATTICA:
 - int (pqueue, item) -> int
 
 SPECIFICA SEMANTICA:
-- insert (p, key)   -> 0: Se va a buon fine
+- inserimento_coda (p, key)   -> 0: Se va a buon fine
                     -> 1: Se l'inserimento o l'espansione non vanno a buon fine
 
 PRE-CONDIZIONI:
@@ -135,7 +135,7 @@ SIDE-EFFECTS:
 - Stampa su schermo in caso di errore
 
 */
-int insert(pqueue q, item key);
+int inserimento_coda(pqueue q, item key);
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 

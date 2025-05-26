@@ -1,4 +1,19 @@
+//FUNZIONE PER METTERE IN PAUSA IL PROGRAMMA (PORTABILE)
+/*
+SPECIFICA SINTATTICA:
+-   void (int) -> void
+SPECIFICA SEMANTICA:
+-   pausa (sec) -> void
+PRE-CONDIZIONI:
+-   sec è un numero intero compreso tra 0 ed il massimo di caratteri interi rappresentabili
+POST-CONDIZIONI:
+-   mette in pausa il programma per sec secondi
+SIDE-EFFETCT:
+-   Blocca l'esecuzione del programma per sec secondi
+*/
 void pausa(int sec);
+
+//------------------------------------------------------------------------------------------------------------------------------------------
 
 //FUNZIONE PER OTTENERE LA DATA ODIERNA
 /*

@@ -111,6 +111,19 @@
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
+//FUNZIONE PER METTERE IN PAUSA IL PROGRAMMA (PORTABILE)
+/*
+SPECIFICA SINTATTICA:
+-   void (int) -> void
+SPECIFICA SEMANTICA:
+-   pausa (sec) -> void
+PRE-CONDIZIONI:
+-   sec è un numero intero compreso tra 0 ed il massimo di caratteri interi rappresentabili
+POST-CONDIZIONI:
+-   mette in pausa il programma per sec secondi
+SIDE-EFFETCT:
+-   Blocca l'esecuzione del programma per sec secondi
+*/
 static void pausa_tempo(int sec){
     #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
         Sleep(sec * 1000);
@@ -121,6 +134,7 @@ static void pausa_tempo(int sec){
 return;
 }
 
+//------------------------------------------------------------------------------------------------------------
 
 //FUNZIONE PER OTTENERE LA DATA ODIERNA
 /*

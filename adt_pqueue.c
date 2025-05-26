@@ -244,7 +244,7 @@ SPECIFICA SINTATTICA:
 - int (pqueue, item) -> int
 
 SPECIFICA SEMANTICA:
-- insert (p, key)   -> 0: Se va a buon fine
+- inserimento_coda (p, key)   -> 0: Se va a buon fine
                     -> 1: Se l'inserimento o l'espansione non vanno a buon fine
 
 PRE-CONDIZIONI:
@@ -257,7 +257,7 @@ SIDE-EFFECTS:
 - Stampa su schermo in caso di errore
 
 */
-int insert(pqueue p, item key){
+int inserimento_coda(pqueue p, item key){
      if ((!p)||(!key)){                           // Verifica se puntatori a coda o item sono NULL.
           printf("Errore, coda inesistente.\n"); 
           return 1;
@@ -465,9 +465,9 @@ void ottieni_queue_da_file(pqueue p, FILE* fp){
                if(strcmp(tempo_passato, "(null)") == 0)
                     strcpy(tempo_passato, "0:0:0");
                
-               //Usa i campi presi dal file report, li passa in input a inserisci_item() per generarne un item e lo inserisce nella queue con insert()
+               //Usa i campi presi dal file report, li passa in input a inserisci_item() per generarne un item e lo inserisce nella queue con inserimento_coda()
                item a = inserisci_item(descrizione, corso, data_scadenza, tempo_stimato, tempo_passato, priorita, id, stato);
-               if(insert(p, a) != 0)    //Controllo errore di inserimento
+               if(inserimento_coda(p, a) != 0)    //Controllo errore di inserimento
                     printf("Errore nell'aggiunta dell'item");
           }     
           else //Controllo errore parsing dei parametri per sscanf

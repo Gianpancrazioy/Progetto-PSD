@@ -76,13 +76,13 @@ int main(void){
                     break;
                 }
                 item a = aggiungi(id);
-                if (insert(p, a) != 0) {
+                if (inserimento_coda(p, a) != 0) {
                     printf("Errore nell'inserimento dell'elemento nella coda \"report\".\n");
                 }
 
                 item b = copia_item(a); //Crea una copia dell'item per inserirla nell'altra lista, evitando di lavorare sullo stesso puntatore
 
-                if (insert(q, b) != 0) {
+                if (inserimento_coda(q, b) != 0) {
                     printf("Errore nell'inserimento dell'elemento nella coda \"attivita'\".\n");
                 }
 
@@ -91,6 +91,7 @@ int main(void){
         //CASE 2 PERMETTE DI STAMPARE LA QUEUE REPORT SETTIMANALE
         case 2: pulisci_schermo();
                 stampa_queue_priorita(p); 
+                printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                 pausa(7);
                 break;
 
@@ -100,6 +101,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
+                        printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                         pausa(2);
                         break;
                     }
@@ -133,13 +135,15 @@ int main(void){
                 char stringa[9];
                 double tempo_totale = 0;
                 cronometro(stringa, &tempo_totale);
-                pausa(2);
+                printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
+                pausa(3);
 
                 printf("Tempo di lavoro: %s\n", stringa);   //Stampa tempo di lavoro su attività scelta
 
                 //Chiama funzione per modificare il tempo di lavoro per l'attività selezionata
                 if(modifica_tempo_queue(q, c, tempo_totale) == 1){
                     printf("Errore, impossibile aggiornare tempo, uscita..\n");
+                    printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                     pausa(3);
                     break;
                 }
@@ -149,6 +153,7 @@ int main(void){
         //CASE 4 PERMETTE DI STAMPARE TUTTE LE ATTIVITA' IN ORDINE DI PRIORITA' 
         case 4: pulisci_schermo();
                 stampa_queue_priorita(q);
+                printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                 pausa(7);
                 break;
         
@@ -158,6 +163,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
+                        printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                         pausa(2);
                         break;
                     }
@@ -203,7 +209,10 @@ int main(void){
                     aggiorna_ritardo(p, a);             //Lo segna anche nel report
                     aggiorna_file_attivita_queue(q);    //Aggiorna il file attività e menu attività
                     }
-                else pausa(3);
+                else{    
+                    printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
+                    pausa(5);
+                }
                 
                 break;
         
@@ -212,7 +221,9 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
+                        printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                         pausa(2);
+
                         break;
                     }
 
@@ -247,6 +258,7 @@ int main(void){
                 aggiorna_file_attivita_queue(q);
 
                 printf("Attivita' Completata con Successo! Continua Cosi'!\n");
+                printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
                 pausa(2);
 
                 break;

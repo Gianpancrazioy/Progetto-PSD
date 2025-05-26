@@ -6,6 +6,7 @@
 *                                                                                                                                                               *
 *   - time_functions.c - cronometro() utilizza <conio.h> esclusiva di windows oppure <termios.h> e <sys/select.h> per macOS e Linux                             *
 *   - main.c e funztions.c - Utilizzano system(CLEAR) in alcune occasioni, questo va sostituito con system("cls") se su windows, system("clear") se su macOS    *
+*   - main.c e time_functions.c - utilizzano sleep(), questa funzione ha una sintassi lievemente diversa su Windows o Linux, quindi potrebbe non funzionare     *
 *                                                                                                                                                               *
 *                                                            Se dovessero esserci problemi, ci scusiamo per il disagio. - Lo Sviluppatore (Vuolo Antonio)       *
 *                                                                                                                                                               *
