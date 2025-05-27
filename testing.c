@@ -594,6 +594,8 @@ int main(void){
                     printf("TEST STAMPA PRIORITA': FALLITO\n");
                     scrivi_risultati(s);
                 }
+
+                pausa(2);
                 
                 fclose(fp);
                 fclose(fp1);

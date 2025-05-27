@@ -72,7 +72,7 @@ int main(void){
                 id = ottieni_id(q);
                 if(id == -1){
                     printf("Impossibile aggiungere elemento, problema con ID, riprovare\n");
-                    pausa(3);
+                    pausa_tempo(3);
                     break;
                 }
                 item a = aggiungi(id);
@@ -92,7 +92,7 @@ int main(void){
         case 2: pulisci_schermo();
                 stampa_queue_priorita(p); 
                 printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                pausa(7);
+                pausa_tempo(7);
                 break;
 
         //CASE 3 PERMETTE DI LAVORARE AD UN'ATTIVITA' E MODIFICARNE IL TEMPO DI LAVORO
@@ -102,7 +102,7 @@ int main(void){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
                         printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                        pausa(2);
+                        pausa_tempo(2);
                         break;
                     }
 
@@ -136,7 +136,7 @@ int main(void){
                 double tempo_totale = 0;
                 cronometro(stringa, &tempo_totale);
                 printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                pausa(3);
+                pausa_tempo(3);
 
                 printf("Tempo di lavoro: %s\n", stringa);   //Stampa tempo di lavoro su attività scelta
 
@@ -144,7 +144,7 @@ int main(void){
                 if(modifica_tempo_queue(q, c, tempo_totale) == 1){
                     printf("Errore, impossibile aggiornare tempo, uscita..\n");
                     printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                    pausa(3);
+                    pausa_tempo(3);
                     break;
                 }
 
@@ -154,7 +154,7 @@ int main(void){
         case 4: pulisci_schermo();
                 stampa_queue_priorita(q);
                 printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                pausa(7);
+                pausa_tempo(7);
                 break;
         
         //CASE 5 PERMETTE DI CONTROLLARE STATO COMPLETAMENTO DI UNA DATA ATTIVITA'
@@ -164,7 +164,7 @@ int main(void){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
                         printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                        pausa(2);
+                        pausa_tempo(2);
                         break;
                     }
 
@@ -211,7 +211,7 @@ int main(void){
                     }
                 else{    
                     printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                    pausa(5);
+                    pausa_tempo(5);
                 }
                 
                 break;
@@ -222,7 +222,7 @@ int main(void){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
                         printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                        pausa(2);
+                        pausa_tempo(2);
 
                         break;
                     }
@@ -259,7 +259,7 @@ int main(void){
 
                 printf("Attivita' Completata con Successo! Continua Cosi'!\n");
                 printf("\nTra pochi secondi si tornera' automaticamente al menu pricipale.\nAttendere, prego..");
-                pausa(2);
+                pausa_tempo(2);
 
                 break;
         
@@ -269,7 +269,7 @@ int main(void){
                     if((!q)||(coda_vuota(q) == 1)){
                         printf("Non ci sono attivita' su cui lavorare\n");
                         i = 1;
-                        pausa(2);
+                        pausa_tempo(2);
                         break;
                     }
 

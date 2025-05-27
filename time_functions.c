@@ -124,7 +124,7 @@ POST-CONDIZIONI:
 SIDE-EFFETCT:
 -   Blocca l'esecuzione del programma per sec secondi
 */
-static void pausa_tempo(int sec){
+void pausa_tempo(int sec){
     #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
         Sleep(sec * 1000);
     #else                       //Pulizia schermo in caso di dispositivi macOS o Linux
