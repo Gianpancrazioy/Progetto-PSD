@@ -7,6 +7,28 @@ typedef struct attivita_studio *item;
 
 #include <stdio.h>
 
+//------------------------------------------------------------------------------------------------------------
+
+//FUNZIONE PER OTTENERE LA PRIORITA' DELL'ITEM IN INPUT
+/*
+SPECIFICA SINTATTICA:
+- int (item) -> int
+
+SPECIFICA SEMANTICA:
+- ottieni_priorità (a) -> a->priorita
+
+PRE-CONDIZIONI:
+- Puntatore ad item in input valido
+
+POST-CONDIZIONI:
+- Restituisce il valore del campo "priorita" dell'item in input
+
+SIDE-EFFECTS:
+- Nessuno
+
+*/
+int ottieni_priorita(item a);
+
 //-------------------------------------------------------------------------------------
 
 //FUNZIONE PER CREARE ED ALLOCARE DINAMICAMENTE UN NUOVO ITEM CON PARAMETRI ANNESSI
@@ -243,28 +265,6 @@ SIDE-EFFECTS:
 
 */
 int modifica_tempo(item a, double tempo_totale);
-
-//------------------------------------------------------------------------------------------------------------
-
-//FUNZIONE PER OTTENERE LA PRIORITA' DELL'ITEM IN INPUT
-/*
-SPECIFICA SINTATTICA:
-- int (item) -> int
-
-SPECIFICA SEMANTICA:
-- ottieni_priorità (a) -> a->priorita
-
-PRE-CONDIZIONI:
-- Puntatore ad item in input valido
-
-POST-CONDIZIONI:
-- Restituisce il valore del campo "priorita" dell'item in input
-
-SIDE-EFFECTS:
-- Nessuno
-
-*/
-int ottieni_priorita(item a);
 
 //-------------------------------------------------------------------------------------
 

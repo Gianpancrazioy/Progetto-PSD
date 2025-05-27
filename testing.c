@@ -15,6 +15,28 @@
 #include "testing_item.h"
 #include "testing_adt.h"
 
+void svuota_risultati(){
+    FILE* fp = fopen("test_suite/risultati_test.txt", "w");
+    fclose(fp);
+
+return;
+}
+//------------------------------------------------------------------------------------------------------------
+
+void scrivi_risultati(int s){
+    FILE* fp = fopen("test_suite/risultati_test.txt", "a");
+
+    if(s == 1){
+        fprintf(fp, "%s", "TEST: SUCCESSO\n");
+    }
+    else
+        fprintf(fp, "%s", "TEST: FALLITO\n");
+
+    fclose(fp);
+
+return;
+}
+
 //------------------------------------------------------------------------------------------------------------
 
 void pausa(int sec){
@@ -175,140 +197,6 @@ return 0;
 
 //------------------------------------------------------------------------------------------------------------
 
-//FUNZIONE CHE GENERA FILES ORACOLO PER I TEST
-void genera_oracles(){
-    FILE* fp;
-
-    //ORACLE TEST 1
-    fp = fopen("test_suite/Oracle_test_inserimento.txt", "w");
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");    
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");    
-    fprintf(fp, "test3 piu di 30 caratteri inse\n");    
-    fprintf(fp, "inserimento con\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");    
-    fclose(fp);        
-
-    //INPUT TEST 1
-    fp = fopen("test_suite/Test1_input.txt", "w");
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");    
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");    
-    fprintf(fp, "test3 piu di 30 caratteri inseriti insieme\n");    
-    fprintf(fp, "inserimento con tanti caratteri\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");    
-    fclose(fp);
-    
-//---------------------------------------------------
-
-    //ORACLE TEST 2
-    fp = fopen("test_suite/Oracle_test_progresso.txt", "w");
-    fprintf(fp, "0.00\n");    
-    fprintf(fp, "100.00\n");    
-    fprintf(fp, "50.00\n");    
-    fprintf(fp, "100.00\n");    
-    fclose(fp);
-                
-    //INPUT TEST 2
-    fp = fopen("test_suite/test2_input.txt", "w");
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");    
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");    
-    fprintf(fp, "test3 piu di 30 caratteri inseriti insieme\n");    
-    fprintf(fp, "inserimento con tanti caratteri\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");    
-    fclose(fp);
-
-
-
-//----------------------------------------------------
-
-    //ORACLE TEST 3
-    fp = fopen("test_suite/Oracle_test_rimozione.txt", "w");    
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");        
-    fprintf(fp, "test3 piu di 30 caratteri inse\n");    
-    fprintf(fp, "inserimento con\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fclose(fp);
-
-    //INPUT TEST 3
-    fp = fopen("test_suite/test3_input.txt", "w");
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");    
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");    
-    fprintf(fp, "test3 piu di 30 caratteri inseriti insieme\n");    
-    fprintf(fp, "inserimento con tanti caratteri\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");    
-    fclose(fp);
-
-    //----------------------------------------------------
-
-    //ORACLE TEST 4
-    fp = fopen("test_suite/Oracle_test_report_priorita.txt", "w");
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");    
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");    
-    fprintf(fp, "test3 piu di 30 caratteri inse\n");    
-    fprintf(fp, "inserimento con\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");    
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");    
-    fclose(fp);        
-
-    //INPUT TEST 4
-    fp = fopen("test_suite/test4_input.txt", "w");
-    fprintf(fp, "test4\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "28/02/2027 2:0:0 4:0:0 0 4 0\n");  
-    fprintf(fp, "test3 piu di 30 caratteri inse\n");    
-    fprintf(fp, "inserimento con\n");    
-    fprintf(fp, "31/04/2026 4:0:0 2:0:0 1 3 -1\n");       
-    fprintf(fp, "test1\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "30/05/2025 03:31:15 0:0:0 3 1 1\n");   
-    fprintf(fp, "test2_tempo_passato_aggiornato\n");    
-    fprintf(fp, "inserimento\n");    
-    fprintf(fp, "13/06/2025 0:0:3 0:0:3 2 2 0\n");   
-    fclose(fp);   
-
-return;
-}
-
-//------------------------------------------------------------------------------------------------------------
-
 int main(void){
     int c, i, ore, minuti, secondi, giorno, mese, anno, priorita, id, stato;
     item a;
@@ -322,7 +210,6 @@ int main(void){
     pqueue p1 = nuova_coda();
     pqueue q1 = nuova_coda();
 
-    genera_oracles();
     genera_code(p, p1, q, q1);
 
     while(1){
@@ -363,6 +250,7 @@ int main(void){
         //CASE 1 PERMETTE DI EFFETTUARE TEST SU INSERIMENTO DI NUOVE ATTIVITA' IN INPUT DA FILE E STAMPA CORRETTA
         //SU FILE REPORT
         case 1: pulisci_schermo();
+                svuota_risultati();
 
                 int s = 1;
 
@@ -390,11 +278,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
+                if(s == 1){
                     printf("TEST INSERIMENTO: SUCCESSO\n");
-                else
+                    scrivi_risultati(s);
+                }
+                else{
                     printf("TEST INSERIMENTO: FALLITO\n");
-                
+                    scrivi_risultati(s);
+                }
                 pausa(2);
                 
                 fclose(fp);
@@ -405,6 +296,7 @@ int main(void){
     
         //CASE 2 PERMETTE TESTARE L'AGGIORNAMENTO DEI PROGRESSI
         case 2: pulisci_schermo();
+                svuota_risultati();
                 
                 controlla_stato_attivita(p1);
 
@@ -432,10 +324,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
-                    printf("TEST PROGRESSO ATTIVITA': SUCCESSO\n");
-                else
-                    printf("TEST PROGRESSO ATTIVITA': FALLITO\n");
+                if(s == 1){
+                    printf("TEST AGGIORNAMENTO: SUCCESSO\n");
+                    scrivi_risultati(s);
+                }
+                else{
+                    printf("TEST AGGIORNAMENTO: FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 pausa(2);
                 
@@ -446,6 +342,7 @@ int main(void){
 
         //CASE 3 PERMETTE DI CONTROLLARE LA COMPLETEZZA DEL FILE REPORT
         case 3: pulisci_schermo();
+                svuota_risultati();
 
                 a = inserisci_item("test2_tempo_passato_aggiornato", "inserimento", "13/06/2025", "0:0:3", "0:0:3", 2, 2, 0);
 
@@ -475,10 +372,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
+                if(s == 1){
                     printf("TEST RIMOZIONE: SUCCESSO\n");
-                else
+                    scrivi_risultati(s);
+                }
+                else{
                     printf("TEST RIMOZIONE: FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 pausa(2);
                 
@@ -490,6 +391,7 @@ int main(void){
         //CASE 4 PERMETTE DI CONTROLLARE LA STAMPA IN BASE A PRIORITA'
         case 4: pulisci_schermo();
                 stampa_queue_priorita(q1);
+                svuota_risultati();
 
                 fp = fopen("test_suite/Oracle_test_report_priorita.txt", "r");
                 fp1 = fopen("test_suite/output1.txt", "r");
@@ -514,10 +416,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
-                    printf("TEST STAMPA PER PRIORITA': SUCCESSO\n");
-                else
-                    printf("TEST STAMPA PER PRIORITA': FALLITO\n");
+                if(s == 1){
+                    printf("TEST STAMPA PRIORITA': SUCCESSO\n");
+                    scrivi_risultati(s);
+                }
+                else{
+                    printf("TEST STAMPA PRIORITA': FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 pausa(2);
                 
@@ -528,6 +434,7 @@ int main(void){
 
         //CONSENTE DI ESEGUIRE TUTTI I TEST IN UNA VOLTA SOLA
         case 5: pulisci_schermo();
+                svuota_risultati();
                 
                 s = 1;
 
@@ -555,10 +462,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
+                if(s == 1){
                     printf("TEST INSERIMENTO: SUCCESSO\n");
-                else
+                    scrivi_risultati(s);
+                }
+                else{
                     printf("TEST INSERIMENTO: FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 pausa(2);
                 
@@ -592,10 +503,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
-                    printf("TEST PROGRESSO ATTIVITA': SUCCESSO\n");
-                else
-                    printf("TEST PROGRESSO ATTIVITA': FALLITO\n");
+                if(s == 1){
+                    printf("TEST AGGIORNAMENTO: SUCCESSO\n");
+                    scrivi_risultati(s);
+                }
+                else{
+                    printf("TEST AGGIORNAMENTO: FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 pausa(2);
                 
@@ -631,11 +546,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
+                if(s == 1){
                     printf("TEST RIMOZIONE: SUCCESSO\n");
-                else
+                    scrivi_risultati(s);
+                }
+                else{
                     printf("TEST RIMOZIONE: FALLITO\n");
-                
+                    scrivi_risultati(s);
+                }
                 pausa(2);
                 
                 fclose(fp);
@@ -668,12 +586,14 @@ int main(void){
                     }
                 }
                 
-                if(s == 1)
-                    printf("TEST STAMPA PER PRIORITA': SUCCESSO\n");
-                else
-                    printf("TEST STAMPA PER PRIORITA': FALLITO\n");
-                
-                pausa(2);
+                if(s == 1){
+                    printf("TEST STAMPA PRIORITA': SUCCESSO\n");
+                    scrivi_risultati(s);
+                }
+                else{
+                    printf("TEST STAMPA PRIORITA': FALLITO\n");
+                    scrivi_risultati(s);
+                }
                 
                 fclose(fp);
                 fclose(fp1);

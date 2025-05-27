@@ -123,7 +123,7 @@ SPECIFICA SINTATTICA:
 
 SPECIFICA SEMANTICA:
 - inserimento_coda (p, key)   -> 0: Se va a buon fine
-                    -> 1: Se l'inserimento o l'espansione non vanno a buon fine
+                              -> 1: Se l'inserimento o l'espansione non vanno a buon fine
 
 PRE-CONDIZIONI:
 - Nessuna, controlli già effettuati

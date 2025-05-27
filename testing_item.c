@@ -670,30 +670,6 @@ return 0;
 
 //------------------------------------------------------------------------------------------------------------
 
-//FUNZIONE PER OTTENERE LA PRIORITA' DELL'ITEM IN INPUT
-/*
-SPECIFICA SINTATTICA:
-- int (item) -> int
-
-SPECIFICA SEMANTICA:
-- ottieni_priorità (a) -> a->priorita
-
-PRE-CONDIZIONI:
-- Puntatore ad item in input valido
-
-POST-CONDIZIONI:
-- Restituisce il valore del campo "priorita" dell'item in input
-
-SIDE-EFFECTS:
-- Nessuno
-
-*/
-int ottieni_priorita(item a){
-    return a->priorita;
-}
-
-//------------------------------------------------------------------------------------------------------------
-
 //FUNZIONE PER STAMPARE I CAMPI DI UN ITEM PASSATO IN INPUT
 /*
 SPECIFICA SINTATTICA:
@@ -730,6 +706,30 @@ void stampa_item(item a){
             printf("-------+---------+---------+---------+---------+---------");    
 
 return;
+}
+
+//------------------------------------------------------------------------------------------------------------
+
+//FUNZIONE PER OTTENERE LA PRIORITA' DELL'ITEM IN INPUT
+/*
+SPECIFICA SINTATTICA:
+- int (item) -> int
+
+SPECIFICA SEMANTICA:
+- ottieni_priorità (a) -> a->priorita
+
+PRE-CONDIZIONI:
+- Puntatore ad item in input valido
+
+POST-CONDIZIONI:
+- Restituisce il valore del campo "priorita" dell'item in input
+
+SIDE-EFFECTS:
+- Nessuno
+
+*/
+int ottieni_priorita(item a){
+    return a->priorita;
 }
 
 //------------------------------------------------------------------------------------------------------------

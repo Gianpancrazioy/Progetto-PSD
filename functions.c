@@ -89,7 +89,7 @@ SIDE-EFFECTS:
 - Pulisce il terminale stdout tramite un comando system()
 
 */
-void pulisci_schermo(){
+void pulisci_schermo(){ 
     system(CLEAR);
     
 return;
