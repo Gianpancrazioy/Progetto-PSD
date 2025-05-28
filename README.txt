@@ -49,32 +49,19 @@ Nello specifico, è possibile svolgere 8 operazioni su attività di studio salva
 8. Permette di aggiornare il contenuto del file report settimanale ed uscire dal programma.
 
 _________________________________________________________________________________________________________________________________________________________________
-
-La scelta dell'adt (abstract data type) da utilizzare mi è stata abbastanza immediata, visto il mio progetto.
-
-* MOTIVAZIONI PER LA SCELTA DI CODA A PRIORITA' PER IL REPORT SETTIMANALE: 
-    -   Non c'era, per me, un reale bisogno di effettuare ricerche mirate (se non per alcune funzioni), vero punto debole di questa struttura dati, ma siccome
-        questo programma è ideato per uno studente, ho immaginato non sarebbero state aggiunte attività di studio in una quantità sufficiente da comprometterne 
-        significativamente l'efficienza.
-
-    -   Volevo che le attività, unicamente quelle contenute nel file dedicato al report settimanale, venissero stampate per l'utente in ordine, in base alla 
-        loro priorità (prima quelle con priorità maggiore), e la struttura dati ideale per ordinare in base ad uno specifico parametro (chiave) è proprio la 
-        coda a piorità.
-
-    -   Gli inserimenti sarebbero stati tutti in coda, siccome poi la coda si sarebbe aggiustata da sola in base alla chiave, quindi O(1).
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-* MOTIVAZIONI PER LA SCELTA DELL'ARRAY NON ORDINATO PER LE ATTIVITA':
-    -   Principalmente, questo array mi è utile per la gestione delle attività in corso, siccome ho fatto in modo che molte scelte si basassero sul campo ID 
-        di una data attività di studio, serviva che questo fosse il più preciso possibile. L'array non è ordinato siccome si sarebbero, in caso, potuti creare
-        casi di ID duplicati o mancanti dopo le rimozioni, quindi viene ordinato manualmente ad ogni interazione che potrebbe causare problemi.
-
-    -   Volevo fossero stampate in ordine di ID per una questione di leggibilità e chiarezza, non per piorità, e siccome sarebbero stati eliminati anche elementi
-        nel mezzo del mio array, ho preferito utilizzare la seconda coda meramente come un array ed ordinarlo manualmente.
-
-    -   Gli inserimenti sono comunque effettuati in ordine di priorità, ma questa non conta nel caso di questa seconda coda.
     
+*SPECIFICHE TECNICHE DELL'IMPLEMENTAZIONE:
+
+    + Tutte le attività inserite saranno salvate in un array di appoggio e nella coda a priorità dedicata al report, saranno aggiornati solamente i file 
+        attivita.txt ed attivita_menu.txt.
+
+    + Tutte le attività rimosse saranno salvate immediatamente in array di appoggio e coda a priorità, ma saranno aggiornati solamente i file attivita.txt 
+        ed attivita_menu.txt.
+    
+    + Il file report_settimanale.txt verrà aggiornato solamente al termine dell'esecuzione del programma, con scelta numero 8.
+    
+    + Le attività completate saranno rimosse dall'array di appoggio, mentre rimarranno visibili nella coda a priorità dedicata al report. Stesso vale per i file.
+
 _________________________________________________________________________________________________________________________________________________________________
 
 * Questo programma è stato sviluppato da Vuolo Antonio, matricola 0512121487, per il progetto del corso di Programmazione e Strutture Dati.
