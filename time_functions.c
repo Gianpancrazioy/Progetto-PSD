@@ -116,7 +116,7 @@
 SPECIFICA SINTATTICA:
 -   void (int) -> void
 SPECIFICA SEMANTICA:
--   pausa (sec) -> void
+-   pausa_tempo (sec) -> void
 PRE-CONDIZIONI:
 -   sec è un numero intero compreso tra 0 ed il massimo di caratteri interi rappresentabili
 POST-CONDIZIONI:

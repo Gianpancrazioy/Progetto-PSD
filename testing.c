@@ -39,6 +39,19 @@ return;
 
 //------------------------------------------------------------------------------------------------------------
 
+//FUNZIONE PER METTERE IN PAUSA IL PROGRAMMA (PORTABILE)
+/*
+SPECIFICA SINTATTICA:
+-   void (int) -> void
+SPECIFICA SEMANTICA:
+-   pausa (sec) -> void
+PRE-CONDIZIONI:
+-   sec è un numero intero compreso tra 0 ed il massimo di caratteri interi rappresentabili
+POST-CONDIZIONI:
+-   mette in pausa il programma per sec secondi
+SIDE-EFFETCT:
+-   Blocca l'esecuzione del programma per sec secondi
+*/
 void pausa(int sec){
     #ifdef _WIN32               //Pulizia schermo in caso di dispositivi Windows
         Sleep(sec * 1000);
@@ -219,8 +232,8 @@ int main(void){
         printf("/\\/\\/\\/\\/\\/\\/|BENVENUTO!|/\\/\\/\\/\\/\\/\\/\\*\n");
         printf("*****************************************\n*");
         printf("/\\/\\/\\/\\/|COSA SI VUOLE FARE?|/\\/\\/\\/\\/*\n*****************************************\n*\t\t\t\t\t*\n");
-        printf("*1) Test inserimento attivita'.----+----*\n*\t\t\t\t\t*\n*---+---2) Test Report Settimanale.\t*\n*\t\t\t\t\t*\n*"
-                "3) Test Stato Completamento.-----+-----*\n*\t\t\t\t\t*\n*--+--4) Test Rimozione.\t\t*\n*\t\t\t\t\t*\n*\t5) Testare tutta la suite.--+---*\n*\t\t\t\t\t*\n-"
+        printf("*1) Test inserimento attivita'.----+----*\n*\t\t\t\t\t*\n*---+---2) Test Stato Completamento.\t*\n*\t\t\t\t\t*\n*"
+                "3) Test Rimozione Attivita'-----+-----*\n*\t\t\t\t\t*\n*--+--4) Test Report Sett.\t*\n*\t\t\t\t\t*\n*\t5) Testare tutta la suite.--+---*\n*\t\t\t\t\t*\n-"
                 "---+----+----6) Chiudi l'applicazione. *");
         printf("\n*\t\t\t\t\t*\n");
         printf("*****************************************\n");

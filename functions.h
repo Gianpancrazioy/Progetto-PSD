@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 //FUNZIONE PER PULIRE IL BUFFER
 /*
 SPECIFICA SINTATTICA:

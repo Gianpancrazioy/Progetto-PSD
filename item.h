@@ -264,35 +264,6 @@ SIDE-EFFECTS:
 */
 int ottieni_priorita(item a);
 
-//-------------------------------------------------------------------------------------
-
-//FUNZIONE PER VERIFICARE LO STATO DI COMPLETAMENTO DI UN ITEM PASSATO IN INPUT E, IN CASO, AGGIORNARLO
-/*
-SPECIFICA SINTATTICA:
-- int (item) -> int
-
-SPECIFICA SEMANTICA:
-- stato_completamento_item (a)  -> -1: Attività in ritardo
-                                ->  0: Attività completata 
-                                ->  1: Attività in corso
-
-PRE-CONDIZIONI:
-- Item a in input è un puntatore valido
-
-POST-CONDIZIONI:
-- Mostra lo stato di completamento dell'attività basandosi sulla percentuale ottenuta da tempo_passato e tempo_stimato dell'item 
-    in input. Se l'attività risulta ancora in corso, allora restituisce 1, se invece risulta completata (percentuale del 100%), 
-    allora chiede all'utente se l'attività è stata completata nel tempo previsto o meno. 
-    Se l'attività è stata completata, restituisce 0, altrimenti -1
-
-SIDE-EFFECTS:
-- Stampa a schermo una barra di avanzamento con percentuale tramite funzione mostra_barra_avanzamento()
-- Stampa a schermo istruzioni per input
-- Prende input da tastiera 
-
-*/
-int stato_completamento_item(item a);
-
 //------------------------------------------------------------------------------------------------------------
 
 //FUNZIONE PER STAMPARE I CAMPI DI UN ITEM PASSATO IN INPUT
